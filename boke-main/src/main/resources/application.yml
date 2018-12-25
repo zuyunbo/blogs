@@ -1,0 +1,46 @@
+server:
+  port: 8083
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    shiroDataSource:
+      type: com.alibaba.druid.pool.DruidDataSource
+      driverClassName: com.mysql.jdbc.Driver
+      initialize: true #指定初始化数据源，是否用data.sql来初始化，默认: true
+      name: cmmi
+      url: jdbc:mysql://127.0.0.1:3306/boke?useUnicode=true&characterEncoding=utf-8&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&zeroDateTimeBehavior=convertToNull
+      username: root
+      password: 123456
+    base:
+      type: com.alibaba.druid.pool.DruidDataSource
+      driverClassName: com.mysql.jdbc.Driver
+      initialize: true
+      name: zentaopro
+      url: jdbc:mysql://127.0.0.1:3306/boke_article?useUnicode=true&characterEncoding=utf-8&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&zeroDateTimeBehavior=convertToNull
+      username: root
+      password: 123456
+  mvc:
+    static-path-pattern: /**
+  resources:
+    static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,file:${image-path}
+image-path: E:/
+
+
+globalConfigShrio:
+    #主键类型  0:"数据库ID自增", 1:"用户输入ID",2:"全局唯一ID (数字类型唯一ID)", 3:"全局唯一ID UUID";
+  idType: 0
+    #字段策略 0:"忽略判断",1:"非 NULL 判断"),2:"非空判断"
+  fieldStrategy: 2
+    #驼峰下划线转换
+  dbColumnUnderline: true
+    #刷新mapper 调试神器
+  refreshMapper: true
+
+
+logging:
+  #  path: E:\test\log
+  level:
+    com.boke: debug
+
+
+

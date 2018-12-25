@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.boke.config.shiro.mapper.RoleInfoMapper">
+
+    <!-- 开启二级缓存 -->
+    <!--<cache type="org.mybatis.caches.ehcache.LoggingEhcache"/>-->
+
+    <select id="selectRoleByUser" parameterType="com.boke.config.shiro.entity.UserInfo" resultType="com.boke.config.shiro.entity.RoleInfo">
+        SELECT
+            sr.*
+        FROM
+            user_role sur
+            LEFT JOIN role_info sr ON sur.role_id = sr.id
+        WHERE
+            sur.id = #{id}
+    </select>
+</mapper>

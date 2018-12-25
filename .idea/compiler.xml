@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="boke-common" />
+        <module name="boke-config" />
+        <module name="boke-main" />
+        <module name="boke-module" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="boke" target="1.8" />
+      <module name="boke-common" target="1.8" />
+      <module name="boke-config" target="1.8" />
+      <module name="boke-main" target="1.8" />
+      <module name="boke-module" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
